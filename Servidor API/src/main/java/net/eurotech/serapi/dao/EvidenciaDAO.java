@@ -8,7 +8,7 @@ import java.util.List;
 import net.eurotech.serapi.entity.Evidencia;
 
 /**
- * @author Carlos
+ * @author cfuente
  *
  */
 public interface EvidenciaDAO {

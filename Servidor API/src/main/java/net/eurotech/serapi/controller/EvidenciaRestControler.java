@@ -21,7 +21,7 @@ import net.eurotech.serapi.entity.Evidencia;
 import net.eurotech.serapi.service.EvidenciaService;
 
 /**
- * @author Carlos
+ * @author cfuente
  *
  */
 @RestController
@@ -35,7 +35,7 @@ public class EvidenciaRestControler {
 	//Método para el GET /api/evidencia:
 	@GetMapping("/evidencia")
 	public List<Evidencia> findAll(){
-		// Todos los usuarios:
+		// Todas las evidencias:
 		return evidenciaService.findAll();
 	}
 

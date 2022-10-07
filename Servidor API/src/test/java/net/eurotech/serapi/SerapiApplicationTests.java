@@ -7,7 +7,8 @@ import org.springframework.boot.test.context.SpringBootTest;
 class SerapiApplicationTests {
 
 	@Test
-	void contextLoads() {
+	void testDocumentoRecuperado() {
+		
 	}
 
 }
