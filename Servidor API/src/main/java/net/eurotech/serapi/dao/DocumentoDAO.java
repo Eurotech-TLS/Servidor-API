@@ -20,6 +20,8 @@ public interface DocumentoDAO {
 	public void save(Documento documento);
 	
 	public void deleteById(int id);
+	
+	public Documento findByHash(String hashId);
 
 
 }

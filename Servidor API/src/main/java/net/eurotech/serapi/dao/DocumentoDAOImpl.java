@@ -44,4 +44,12 @@ public class DocumentoDAOImpl implements DocumentoDAO{
 		laQuery.setParameter("idDocumento", id);
 		laQuery.executeUpdate();
 	}
+
+	@Override
+	public Documento findByHash(String hashId) {
+		Session currentSession = entityManager.unwrap(Session.class);
+		Query<Documento> laQuery = currentSession.createNativeQuery("SELECT *  FROM Documento WHERE hash_md5 LIKE(:hash_md5) LIMIT 1", Documento.class);
+		laQuery.setParameter("hash_md5", hashId);
+		return (Documento) laQuery.getSingleResult();
+	}
 }

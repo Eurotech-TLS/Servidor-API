@@ -17,5 +17,6 @@ public interface DocumentoService {
 	public Documento findById(int id);
 	public void save(Documento documento);
 	public void deleteById(int id);
+	public Documento findByHash(String hashId);
 
 }

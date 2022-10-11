@@ -43,4 +43,10 @@ public class DocumentoServiceImpl implements DocumentoService{
 		documentoDAO.deleteById(id);
 	}
 
+	@Override
+	public Documento findByHash(String hashId) {
+		Documento documento = documentoDAO.findByHash(hashId);
+		return documento;
+	}
+
 }

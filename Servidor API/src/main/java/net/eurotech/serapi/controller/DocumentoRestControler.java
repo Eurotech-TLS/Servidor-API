@@ -42,6 +42,7 @@ public class DocumentoRestControler {
 	// Método GET + id de documento /documento/{id}:
 	@GetMapping("/documento/{documentoId}")
 	public Documento getDocumento(@PathVariable int documentoId) {
+		System.out.println("*******************   D O C U M E N T O");
 		Documento documento = documentoService.findById(documentoId);
 		if(documento == null) {
 			throw new RuntimeException("El Documento no se ha encontrado");
