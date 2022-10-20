@@ -59,6 +59,12 @@ public class Documento {
 		this.id_doc_padre = id_doc_padre;
 	}
 
+	
+	public Documento(String hash_md5) {
+		super();
+		this.hash_md5 = hash_md5;
+	}
+
 	public java.sql.Date getFecha_documento() {
 		return fecha_documento;
 	}

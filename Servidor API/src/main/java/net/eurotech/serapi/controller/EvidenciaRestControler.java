@@ -92,10 +92,10 @@ public class EvidenciaRestControler {
 		private DocumentoService documentoService;
 		
 	
-		// Método GET + id de documento /documento/{hash}:
+		// Método GET + hash del documento /documento/{hash}:
 		@GetMapping("/documento/{documentoHash}")
 		public Documento getDocumento(@PathVariable String documentoHash) {
-//			Documento documento = documentoService.findById(documentoId);
+			System.out.print("-*-*-*-*-*-*-*-*-*-*-*-*-*");
 			Documento documento = documentoService.findByHash(documentoHash);
 			if(documento == null) {
 				throw new RuntimeException("El Documento no se ha encontrado");
