@@ -37,7 +37,7 @@ public class Evidencia {
 	
 	public Evidencia(){}
 	
-	public Evidencia(int id, int id_documento, int id_tipo_evidencia) {
+	public Evidencia(int id_evidencia, int id_documento, int id_tipo_evidencia) {
 		this.id_evidencia = id_evidencia;
 		this.id_documento = id_documento;
 		this.id_tipo_evidencia = id_tipo_evidencia;

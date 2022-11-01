@@ -16,12 +16,9 @@ import static org.springframework.test.web.servlet.request.MockMvcRequestBuilder
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.jsonPath;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
-import java.util.List;
-
-import org.assertj.core.util.Arrays;
-
 import net.eurotech.serapi.controller.EvidenciaRestControler;
 import net.eurotech.serapi.entity.Documento;
+import net.eurotech.serapi.entity.Evidencia;
 import net.eurotech.serapi.service.DocumentoService;
 import net.eurotech.serapi.service.EvidenciaService;
 
@@ -45,8 +42,20 @@ public class EvidenciaRestControlerTests {
 		
 		mockMvc.perform(get("/api/documento/1000"))
 			.andExpect(status().isOk())
-			.andExpect(jsonPath("hash_md5", Matchers.is("1000")));
+			.andExpect(jsonPath("hash_md5", Matchers.is("1000")));		
+	}
+	
+	@Test
+	public void testfindById() throws Exception {
+		Evidencia evidencia = new Evidencia(1000, 1000, 1000); 
 		
+		Mockito.when(evidenciaService.findById(1000)).thenReturn(evidencia);
+		
+		mockMvc.perform(get("/api/evidencia/1000"))
+			.andExpect(status().isOk())
+			.andExpect(jsonPath("id_evidencia", Matchers.is(1000)))
+			.andExpect(jsonPath("id_tipo_evidencia", Matchers.is(1000)))
+			.andExpect(jsonPath("id_documento", Matchers.is(1000)));			
 	}
 
 }
